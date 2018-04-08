@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="stylesheets/vue-material.css">
+    <link rel="stylesheet" href="stylesheets/themes/default.css">
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/vue.js"></script>
+    <script src="lib/vue-material.js"></script>
+    <script src="lib/echarts.min.js"></script>
+    <style>
+        html,
+        body,
+        #app,
+        #appPageContainer {
+            height: 100%;
+        }
+
+        .card-in-step {
+            width: 65%;
+            margin: 4px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <style>
+        .md-app {
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .md-drawer {
+            width: 300px;
+            max-width: calc(100vw - 125px);
+        }
+    </style>
+    <div id="app">
+        <div id='appPageContainer' class="page-container">
+            <md-app>
+                <md-app-toolbar class="md-primary">
+                    <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
+                        <md-icon>menu</md-icon>
+                    </md-button>
+                    <span class="md-title">机电传感器实验</span>
+                </md-app-toolbar>
+
+                <md-app-drawer :md-active.sync="menuVisible" md-persistent="full">
+                    <md-toolbar class="md-transparent" md-elevation="0">
+                        <span>实验列表</span>
+
+                        <div class="md-toolbar-section-end">
+                            <md-button class="md-icon-button md-dense" @click="toggleMenu">
+                                <md-icon>keyboard_arrow_left</md-icon>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+
+                    <md-list>
+                        <md-list-item @click="gotopage('jd-solution-1')">
+                            <md-avatar class="md-avatar-icon md-small">1</md-avatar>
+                            <span class="md-list-item-text">应变片单臂电桥性能实验</span>
+                        </md-list-item>
+
+                        <md-list-item @click="gotopage('jd-solution-2')">
+                            <md-avatar class="md-avatar-icon md-small">2</md-avatar>
+                            <span class="md-list-item-text">应变片半桥性能实验</span>
+                        </md-list-item>
+
+                        <md-list-item @click="gotopage('jd-solution-3')">
+                            <md-avatar class="md-avatar-icon md-small">3</md-avatar>
+                            <span class="md-list-item-text">T应变片全桥性能实验</span>
+                        </md-list-item>
+
+                        <md-list-item @click="gotopage('jd-solution-4')">
+                            <md-avatar class="md-avatar-icon md-small">4</md-avatar>
+                            <span class="md-list-item-text">应变片单臂、半桥、全桥性能比较</span>
+                        </md-list-item>
+                        <md-list-item @click="gotopage('jd-solution-5')">
+                            <md-avatar class="md-avatar-icon md-small">5</md-avatar>
+                            <span class="md-list-item-text">应变片直流全桥的应用-电子秤实验</span>
+                        </md-list-item>
+                    </md-list>
+                </md-app-drawer>
+
+                <md-app-content id="appContent">
+
+                </md-app-content>
+            </md-app>
+        </div>
+
+    </div>
+    <script>
+        "use strict"
+
+        Vue.use(VueMaterial.default)
+
+        var example = {
+            name: "PersistentFull",
+            data: function data() {
+                return {
+                    menuVisible: false
+                }
+            },
+            methods: {
+                toggleMenu: function toggleMenu() {
+                    this.menuVisible = !this.menuVisible
+                },
+                gotopage: function gotopage(exId) {
+                    // var pagehtmlname = exId + '.html'
+                    pyapi.api_getPageHtml(exId, js_callback_api_getPageHtml)
+                },
+
+            }
+        }
+
+        var app = new Vue(example)
+
+        app.$mount("#app")
+
+        function js_callback_api_getPageHtml(result, callback_js_python) {
+            var pagehtml = result['pageHtml']
+            $('#appContent').html(pagehtml)
+        }
+    </script>
+</body>
+
+</html>

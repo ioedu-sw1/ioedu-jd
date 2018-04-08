@@ -1,0 +1,26 @@
+{
+	"tasks":[
+		{
+			"type":"ai",
+			"channels":
+			[
+				{
+					"physicalchanname":"ai0",
+					"max":5,
+					"min":-5
+				},		
+				{
+					"physicalchanname":"ai1",
+					"max":5,
+					"min":-5
+				}
+			],
+			"sampleclock":
+			{
+				"rate":10,
+				"samplesperchannel":10
+			}
+		}
+	]
+
+}

@@ -1,0 +1,310 @@
+
+[2018-02-06 16:46:54] Traceback (most recent call last):
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 101, in <module>
+    main()
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 33, in main
+    HTML_code = get_output_html()
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 46, in get_output_html
+    with open('output.html') as f:
+IOError: [Errno 2] No such file or directory: 'output.html'
+
+
+[2018-02-06 17:25:35] Traceback (most recent call last):
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 101, in <module>
+    main()
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 33, in main
+    HTML_code = get_output_html()
+  File "d:\projects\hybrid-app-test\hybrid_app\app.py", line 46, in get_output_html
+    with open('output.html') as f:
+IOError: [Errno 2] No such file or directory: 'output.html'
+
+
+[2018-02-28 22:01:12] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 113, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 36, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 85, in run
+    time.sleep(1)
+NameError: name 'time' is not defined
+
+
+[2018-02-28 22:02:27] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:03:19] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:03:32] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:04:30] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:04:44] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:06:06] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-02-28 22:06:37] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2624, in debug
+    exec_file(file, globals_obj)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 119, in exec_file
+    exec_code(code, file, global_variables)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_util.py", line 95, in exec_code
+    exec(code_obj, global_variables)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 115, in <module>
+    main()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 38, in main
+    thread.run()
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 90, in run
+    p.stdin.flush()
+OSError: [Errno 22] Invalid argument
+
+
+[2018-03-01 14:35:40] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2628, in debug
+    del THREADS[cur_thread.id]
+KeyError: 15668
+
+
+[2018-03-01 14:54:59] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.1.0\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2628, in debug
+    del THREADS[cur_thread.id]
+KeyError: 21548
+
+
+[2018-03-13 16:30:12] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 125, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:/pages/jd-solution-3.html'
+
+
+[2018-03-13 16:30:32] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 125, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:/pages/jd-solution-3.html'
+
+
+[2018-03-13 16:33:02] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pages/jd-solution-3.html'
+
+
+[2018-03-13 16:33:24] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pages/jd-solution-3.html'
+
+
+[2018-03-13 16:59:38] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\projects\\hybrid-app-lv-vue-material\\hybrid_app\\pyinstaller\\./pages/jd-solution-5.html'
+
+
+[2018-03-14 10:12:10] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 85, in _get_html
+    return f.read()
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xa6 in position 257: illegal multibyte sequence
+
+
+[2018-03-14 11:18:51] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r', encoding='UTF-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\projects\\hybrid-app-lv-vue-material\\hybrid_app\\pyinstaller\\./pages/jd-solution-2/page.html'
+
+
+[2018-03-14 15:05:10] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 126, in api_getPageHtml
+    htmlstr = _get_html(abs_html_path)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 84, in _get_html
+    with open(abs_html_path, 'r', encoding='UTF-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\projects\\hybrid-app-lv-vue-material\\hybrid_app\\pyinstaller\\./pages/jd-solution-2/page.html'
+
+
+[2018-03-14 22:51:55] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 134, in api_calculatePolyfit
+    result['polyfit_result'] = np.polyfit(xArr, yArr, deg).tolist()
+  File "C:\Python36\lib\site-packages\numpy\lib\polynomial.py", line 546, in polyfit
+    x = NX.asarray(x) + 0.0
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('<U32') dtype('<U32') dtype('<U32')
+
+
+[2018-03-14 22:56:03] Traceback (most recent call last):
+  File "v8function_handler.pyx", line 42, in cefpython_py36.V8FunctionHandler_Execute (cefpython_py36.cpp:98999)
+  File "d:\projects\hybrid-app-lv-vue-material\hybrid_app\pyinstaller\app.py", line 134, in api_calculatePolyfit
+    result['polyfit_result'] = np.polyfit(xArr, yArr, deg).tolist()
+  File "C:\Python36\lib\site-packages\numpy\lib\polynomial.py", line 546, in polyfit
+    x = NX.asarray(x) + 0.0
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('<U32') dtype('<U32') dtype('<U32')
+
+
+[2018-04-03 14:33:19] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2629, in debug
+    del THREADS[cur_thread.id]
+KeyError: 10876
+
+
+[2018-04-03 14:39:03] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2629, in debug
+    del THREADS[cur_thread.id]
+KeyError: 11416
+
+
+[2018-04-03 15:13:20] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2629, in debug
+    del THREADS[cur_thread.id]
+KeyError: 4572
+
+
+[2018-04-03 15:20:20] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2629, in debug
+    del THREADS[cur_thread.id]
+KeyError: 15560
+
+
+[2018-04-03 16:18:44] Traceback (most recent call last):
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_launcher.py", line 91, in <module>
+    vspd.debug(filename, port_num, debug_id, debug_options, currentPid, run_as)
+  File "C:\Users\robin\.vscode\extensions\ms-python.python-2018.2.1\pythonFiles\PythonTools\visualstudio_py_debugger.py", line 2629, in debug
+    del THREADS[cur_thread.id]
+KeyError: 4680
+

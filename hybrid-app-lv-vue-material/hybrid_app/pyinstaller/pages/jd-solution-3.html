@@ -1,0 +1,84 @@
+<div id='solution_3'>
+    <div>
+        <md-steppers :md-active-step.sync="active" md-vertical md-linear>
+            <md-step id="first" md-label="First Step" md-description="Optional" :md-done.sync="first">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <md-button class="md-raised md-primary" @click="setDone('first', 'second')">Continue</md-button>
+            </md-step>
+
+            <md-step id="second" md-label="Second Step" :md-error="secondStepError" :md-done.sync="second">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <md-button class="md-raised md-primary" @click="setDone('second', 'third')">Continue</md-button>
+            </md-step>
+
+            <md-step id="third" md-label="Third Step" :md-done.sync="third">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus eveniet quaerat modi cumque
+                    quos sed, temporibus nemo eius amet aliquid, illo minus blanditiis tempore, dolores voluptas dolore placeat
+                    nulla.
+                </p>
+                <md-button class="md-raised md-primary" @click="setDone('third')">Done</md-button>
+            </md-step>
+        </md-steppers>
+    </div>
+</div>
+<script>
+    Vue.use(VueMaterial.default)
+
+    var page_3 = {
+        name: "page_3",
+        data: function data() {
+            return {
+                active: "first",
+                first: false,
+                second: false,
+                third: false,
+                secondStepError: null
+            }
+        },
+        methods: {
+            setDone: function setDone(currentId, nextId) {
+                this[currentId] = true
+
+                this.secondStepError = null
+
+                if (nextId) {
+                    this.active = nextId
+                }
+            },
+        }
+    }
+
+    var app = new Vue(page_3)
+
+    app.$mount("#solution_3")
+</script>
