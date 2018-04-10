@@ -1,0 +1,532 @@
+<div id='solution_2'>
+    <div>
+        <md-steppers :md-active-step.sync="active" md-vertical md-linear>
+            <md-step id="step1" md-label="安装" md-description="" :md-done.sync="step1">
+                <p>1、 将托盘安装到传感器上，如“传感器托盘安装示意图”所示。确保电源关闭，否则关闭之
+                    <strong>(myDAQ：关闭IOEDU-myDAQ-Board左上角电压开关；ELVIS：关闭ELVIS自身的右上角电压开关)</strong>
+                    。
+                </p>
+                <md-card class='card-in-step'>
+                    <md-card-header>
+                        <div class="md-subhead">传感器托盘安装示意图</div>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <img src="./pages/jd-solution-1/images/step1.png" alt="传感器托盘安装示意图" />
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <br/>
+                <md-button class="md-raised md-primary" @click="setDone('step1', 'step2')">继续</md-button>
+            </md-step>
+
+            <md-step id="step2" md-label="测量应变片的阻值" :md-done.sync="step2">
+                <p>确保电源关闭，否则关闭之（
+                    <strong>myDAQ：IOEDU-myDAQ-Board左上角电源开关；ELVIS：ELVIS自身右上方的板载电源开关</strong>）。</p>
+                <br/>
+                <p>当传感器的托盘上无重物时，分别测量IO Sense_09_01模块中应变片R1、R2、R3、R4的阻值。在传感器的托盘上放置10只砝码后再分别测量R1、R2、R3、R4的阻值变化，分析应变片的受力情况（受拉的应变片：阻值变大，受压的应变片：阻值变小）。
+                    <strong>测量阻值时，红色表笔后端连接myDAQ/ELVIS的红色VΩ端口，黑色表笔后端连接myDAQ/ELVIS的黑色COM端口。</strong>下图为示意图，未对端口做详细标注。</p>
+                <md-card class='card-in-step'>
+                    <md-card-header>
+                        <div class="md-subhead">测量应变片的阻值示意图</div>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <img src="./pages/jd-solution-1/images/step2.png" alt="测量应变片的阻值示意图" />
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <p>电阻值：
+                    <span class="md-display-1">{{R}}</span>
+                    Ω
+                </p>
+                <br/>
+                <md-button class="md-raised md-primary" @click="setDone('step2', 'step3')">继续</md-button>
+            </md-step>
+
+            <md-step id="step3" md-label="实验模板中的差动放大器调零" :md-done.sync="step3">
+                <p>确保电源关闭，否则关闭之（
+                    <strong>myDAQ：IOEDU-myDAQ-Board左上角电源开关；ELVIS：ELVIS自身右上方的板载电源开关</strong>）。</p>
+                <br/>
+                <p>按“差动放大器调零接线示意图”示意接线，接线完毕后打开电源
+                    <strong>(myDAQ：IOEDU-myDAQ-Board左上角电源开关；ELVIS：ELVIS自身右上方的板载电源开关）</strong>。调节放大器的增益电位器RW3合适位置(先顺时针轻轻转到底，再逆时针回转1圈)后，再调节实验模板放大器的调零电位器RW4，使电压表显示为零。</p>
+                <p>电压表使用方法：
+                    <strong>将红色表笔后端连接myDAQ/ELVIS的红色VΩ端口，黑色表笔后端连接myDAQ/ELVIS的黑色COM端口。红色表笔笔头测量Vo2，黑色表笔笔头测量-Vcc。观察实验软件中的电压表读数。</strong>
+                </p>
+                <md-card class='card-in-step'>
+                    <md-card-header>
+                        <div class="md-subhead">差动放大器调零接线示意图</div>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <img src="./pages/jd-solution-1/images/step3.png" alt="差动放大器调零接线示意图" />
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <p>电压值：
+                    <span class="md-display-1">{{DCVoltage}}</span>
+                    V
+                </p>
+                <br/>
+                <md-button class="md-raised md-primary" @click="setDone('step3', 'step4')">继续</md-button>
+            </md-step>
+            <md-step id="step4" md-label="调节电源至可用范围" :md-done.sync="step4">
+                <p>确保电源打开
+                    <strong>（myDAQ：关闭IOEDU-myDAQ-Board左上角电压开关；ELVIS：关闭ELVIS自身的右上角电压开关）</strong>。</p>
+                <br/>
+                <p>使用电压表，通过调节旋钮（myDAQ：旋钮在1.25~+12V红色端口下方；ELVIS：旋钮在ELVIS自身右侧的0-12V旋钮），确保可调直流稳压电源的红色端口输出电压为+4V。</p>
+                <p>电压表使用方法：
+                    <strong>将红色表笔后端连接myDAQ/ELVIS的红色VΩ端口，黑色表笔后端连接myDAQ/ELVIS的黑色COM端口。红色表笔笔头插入可调直流稳压电源的红色12V端口（myDAQ：1.25~+12V；ELVIS：0~+12V），黑色表笔笔头插入可调直流稳压电源的黑色GND端口。观察实验软件中的电压表读数。</strong>
+                </p>
+                <br/>
+                <p>用同样的方法，确保可调直流稳压电源的黄色端口输出电压为-4V。</p>
+                <p>使用电压表，通过调节旋钮（myDAQ：旋钮在-1.25~-12V红色端口下方；ELVIS：旋钮在ELVIS自身右侧的0--12V旋钮），确保可调直流稳压电源的黄色端口输出电压为-4V。</p>
+                <p>电压表使用方法：
+                    <strong>将红色表笔后端连接myDAQ/ELVIS的红色VΩ端口，黑色表笔后端连接myDAQ/ELVIS的黑色COM端口。红色表笔笔头插入可调直流稳压电源的黄色-12V端口（myDAQ：-1.25~-12V；ELVIS：0~-12V），黑色表笔笔头插入可调直流稳压电源的黑色GND端口。观察实验软件中的电压表读数。</strong>
+                </p>
+                <br/>
+                <p>在确保可调直流稳压电源的黄色端口为+4V，黄色端口为-4V后，确保电源关闭，否则关闭之
+                    <strong>（myDAQ：关闭IOEDU-myDAQ-Board左上角电压开关；ELVIS：关闭ELVIS自身的右上角电压开关）</strong>。按“电源接线示意图”示意接线。其中红线接可调直流稳压电源的红色端口，黄线接可调直流稳压电源的黄色端口。</p>
+                <md-card class='card-in-step'>
+                    <md-card-header>
+                        <div class="md-subhead">电源接线示意图</div>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <img src="./pages/jd-solution-1/images/step4.png" alt="电源接线示意图" />
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <p>电压值：
+                    <span class="md-display-1">{{DCVoltage}}</span>
+                    V
+                </p>
+                <br/>
+                <md-button class="md-raised md-primary" @click="setDone('step4', 'step5')">继续</md-button>
+            </md-step>
+            <md-step id="step5" md-label="应变片单臂电桥实验" :md-done.sync="step5">
+                <p>检查接线无误后，确保电源打开
+                    <strong>（myDAQ：关闭IOEDU-myDAQ-Board左上角电压开关；ELVIS：关闭ELVIS自身的右上角电压开关）</strong>。</p>
+                <p>调节实验模板上的桥路平衡电位器RW1，使电压表接近零；在传感器的托盘上依次增加放置一只20g砝码(尽量靠近托盘的中心点放置)，读取相应的电压值，
+                    <strong>请务必手动记下所有实验数据。</strong>
+                </p>
+                <p>电压表使用方法：
+                    <strong>将红色表笔后端连接myDAQ/ELVIS的红色VΩ端口，黑色表笔后端连接myDAQ/ELVIS的黑色COM端口。红色表笔笔头测量Vo2，黑色表笔笔头测量-Vcc。观察实验软件中的电压表读数。</strong>
+                </p>
+                <md-card class='card-in-step'>
+                    <md-card-header>
+                        <div class="md-subhead">应变片单臂电桥实验接线示意图</div>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <img src="./pages/jd-solution-1/images/step5.png" alt="应变片单臂电桥实验接线示意图" />
+                        </div>
+                    </md-card-content>
+                </md-card>
+                <br/>
+                <p>电压值：
+                    <span class="md-display-1">{{DCVoltage}}</span>
+                    V
+                </p>
+                <md-button class="md-raised md-primary" @click="setDone('step5', 'finalstep')">继续</md-button>
+            </md-step>
+
+            <md-step id="finalstep" md-label="结论" :md-done.sync="finalstep">
+                <p>根据“应变片半桥电桥性能实验数据“表数据做出曲线并计算系统灵敏度S＝ΔV/ΔW（ΔV输出电压变化量，ΔW重量变化量）和非线性误差δ，δ=Δm/yFS ×100％式中Δm为输出值与拟合值的最大偏差：yFS为重量的最大值，例如200g。实验完毕，关闭电源。</p>
+                <div>
+                    <md-table md-card>
+                        <md-table-toolbar>
+                            <h1 class="md-title">应变片半桥性能实验数据表</h1>
+                        </md-table-toolbar>
+                        <md-table-row>
+                            <md-table-cell width="100">重量(g)</md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#1</label>
+                                    <md-input v-model="xArray[0]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#2</label>
+                                    <md-input v-model="xArray[1]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#3</label>
+                                    <md-input v-model="xArray[2]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#4</label>
+                                    <md-input v-model="xArray[3]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#5</label>
+                                    <md-input v-model="xArray[4]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                        </md-table-row>
+                        <md-table-row>
+                            <md-table-cell width="100">电压(mV)</md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#1</label>
+                                    <md-input v-model="yArray[0]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#2</label>
+                                    <md-input v-model="yArray[1]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#3</label>
+                                    <md-input v-model="yArray[2]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#4</label>
+                                    <md-input v-model="yArray[3]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#5</label>
+                                    <md-input v-model="yArray[4]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                        </md-table-row>
+                        <md-table-row>
+                            <md-table-cell width="100">重量(g)</md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#6</label>
+                                    <md-input v-model="xArray[5]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#7</label>
+                                    <md-input v-model="xArray[6]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#8</label>
+                                    <md-input v-model="xArray[7]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#9</label>
+                                    <md-input v-model="xArray[8]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>重量#10</label>
+                                    <md-input v-model="xArray[9]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                        </md-table-row>
+                        <md-table-row>
+                            <md-table-cell width="100">电压(mV)</md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#6</label>
+                                    <md-input v-model="yArray[5]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#7</label>
+                                    <md-input v-model="yArray[6]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#8</label>
+                                    <md-input v-model="yArray[7]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#9</label>
+                                    <md-input v-model="yArray[8]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                            <md-table-cell width="100">
+                                <md-field>
+                                    <label>电压#10</label>
+                                    <md-input v-model="yArray[9]" type="number"></md-input>
+                                </md-field>
+                            </md-table-cell>
+                        </md-table-row>
+
+                    </md-table>
+                </div>
+                <br/>
+                <md-button class="md-raised md-primary" @click="calculateResultTable()">计算</md-button>
+                <div id='chart4table' style="width:65%;height:400px"></div>
+                <span class="md-body-1">非线性误差为：</span>
+                <span class="md-body-1">{{nonlinearError}}%</span>
+                <br/>
+                <span class="md-body-1">系统灵敏度为：</span>
+                <span class="md-body-1">{{systemSensitivity}}</span>
+                <br/>
+                <br/>
+                <md-button class="md-raised md-primary" @click="setDone('finalstep')">完成</md-button>
+            </md-step>
+        </md-steppers>
+    </div>
+</div>
+<script>
+    Vue.use(VueMaterial.default)
+
+    var page_1 = {
+        name: "page_2",
+        data: function data() {
+            return {
+                active: "step1",
+                exId: "jd-solution-2",
+                secondStepError: null,
+                polyfitResultExpression: '',
+                xArray: ['', '', '', '', '', '', '', '', '', ''],
+                yArray: ['', '', '', '', '', '', '', '', '', ''],
+                nonlinearError: 0,
+                systemSensitivity: 0,
+                R: '',
+                DCVoltage: ''
+            }
+        },
+        mounted: function () {
+            var self = this
+            pyapi.api_driver_init(self.exId)
+        },
+        methods: {
+            setDone: function setDone(currentId, nextId) {
+                var self = this
+                self[currentId] = true
+                if (currentId) {
+                    switch (currentId) {
+                        case "step1":
+                            break
+                        case "step2":
+                            // Stop_Read_R
+                            pyapi.api_driver_stop_Read_R()
+                            break
+                        case "step3":
+                            // Stop_Read_DCVoltage
+                            pyapi.api_driver_stop_Read_DCVoltage()
+                            break
+                        case "step4":
+                            // Stop_Read_DCVoltage
+                            pyapi.api_driver_stop_Read_DCVoltage()
+                            break
+                        case "step5":
+                            // Stop_Read_DCVoltage
+                            pyapi.api_driver_stop_Read_DCVoltage()
+                            break
+                        case "finalstep":
+                            break
+                        default:
+                            break
+                    }
+                }
+                if (nextId) {
+                    self.active = nextId
+                    switch (nextId) {
+                        case "step1":
+                            break
+                        case "step2":
+                            // Start_Read_R
+                            pyapi.api_driver_start_Read_R(js_callback_api_driver_start_Read_R)
+                            break
+                        case "step3":
+                            // Start_Read_DCVoltage
+                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                            break
+                        case "step4":
+                            // Start_Read_DCVoltage
+                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                            break
+                        case "step5":
+                            // Start_Read_DCVoltage
+                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                            break
+                        case "finalstep":
+                            break
+                        default:
+                            break
+                    }
+                }
+                function js_callback_api_driver_start_Read_R(result) {
+                    var R_value = result['R']
+                    console.log(R_value)
+                    if (R_value) {
+                        if (R_value != 'NaN') {
+                            R_value = Number(R_value).toFixed(1)
+                        }
+                        self.R = R_value
+                    }
+                }
+                function js_callback_api_driver_start_Read_DCVoltage(result) {
+                    var DCVoltage_value = result['DCVoltage']
+                    if (DCVoltage_value) {
+                        if (DCVoltage_value != 'NaN') {
+                            DCVoltage_value = Number(DCVoltage_value).toFixed(4)
+                        }
+                        self.DCVoltage = DCVoltage_value
+                    }
+                }
+            },
+            calculateResultTable: function calculateResultTable() {
+                var self = this
+                console.log(self.xArray)
+                var w_arr = []
+                var v_arr = []
+                for (let index = 0; index < 10; index++) {
+                    var w_val = Number(self.xArray[index])
+                    w_arr.push(w_val)
+                    var v_val = Number(self.yArray[index])
+                    v_arr.push(v_val)
+                }
+                // get polyfit result and nonlinear error =========================
+                pyapi.api_calculate_Polyfit_NonlinearError(w_arr, v_arr, 1, js_callback_api_calculate_Polyfit_NonlinearError)
+                function build_chartData_2valueArr(xArr, yArr) {
+                    var result = []
+                    for (let index = 0; index < xArr.length; index++) {
+                        const x = xArr[index]
+                        const y = yArr[index]
+                        result.push([x, y])
+                    }
+                    return result
+                }
+
+                function js_callback_api_calculate_Polyfit_NonlinearError(result) {
+                    // get data =========================
+                    var polyfit_result = result['polyfit_result']
+                    var nonlinear_error = result['nonlinear_error']
+                    var polyfit_data = result['polyfit_data']
+                    var xArr = result['xArr']
+                    var yArr = result['yArr']
+                    var x_min = result['x_min']
+                    var x_max = result['x_max']
+                    var y_min = result['y_min']
+                    var y_max = result['y_max']
+                    var x_polyfit_min = result['x_polyfit_min']
+                    var x_polyfit_max = result['x_polyfit_max']
+                    var y_polyfit_min = result['y_polyfit_min']
+                    var y_polyfit_max = result['y_polyfit_max']
+                    // render polyfit =========================
+                    var a = polyfit_result[0].toFixed(2)
+                    var b = polyfit_result[1].toFixed(2)
+                    var str_polyfit_result = ''
+                    if (b > 0) {
+                        str_polyfit_result = 'y = ' + String(a) + ' x' + ' + ' + String(b)
+                    } else {
+                        str_polyfit_result = 'y = ' + String(a) + ' x' + ' - ' + String(-b)
+                    }
+                    self.polyfitResultExpression = str_polyfit_result
+                    self.systemSensitivity = a
+                    // render nonlinear =========================
+                    self.nonlinearError = (nonlinear_error * 100).toFixed(2)
+                    // render graph =========================
+                    var experiment_data_chartdata = build_chartData_2valueArr(xArr, yArr)
+                    var polyfit_data_chartdata = build_chartData_2valueArr(xArr, polyfit_data)
+                    console.log(experiment_data_chartdata)
+                    console.log(polyfit_data_chartdata)
+                    var chart4table = echarts.init(document.getElementById('chart4table'))
+                    console.log(chart4table)
+
+                    var markLineOpt = {
+                        animation: true,
+                        label: {
+                            normal: {
+                                position: 'middle',
+                                fontSize: 20,
+                                color: '#111',
+                                formatter: str_polyfit_result,
+                                textStyle: {
+                                    align: 'center'
+                                }
+                            }
+                        },
+                        lineStyle: {
+                            normal: {
+                                type: 'solid'
+                            }
+                        },
+                        tooltip: {
+                            formatter: str_polyfit_result
+                        },
+                        data: [[{
+                            coord: [x_polyfit_min, y_polyfit_min],
+                            symbol: 'none'
+                        }, {
+                            coord: [x_polyfit_max, y_polyfit_max],
+                            symbol: 'none'
+                        }]]
+                    };
+
+                    var axis_x_min = Math.min(x_polyfit_min, x_min, 0)
+                    var axis_x_max = Math.max(x_polyfit_max, x_max)
+                    var axis_y_min = Math.min(y_polyfit_min, y_min, 0)
+                    var axis_y_max = Math.max(y_polyfit_max, y_max)
+                    var option = {
+                        title: {
+                            text: '应变片单臂电桥实验结果图'
+                        },
+                        tooltip: {
+                            formatter: function (params) {
+                                var data = params.data || [0, 0];
+                                return data[0].toFixed(2) + ', ' + data[1].toFixed(2);
+                            }
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            bottom: '3%',
+                            containLabel: true
+                        },
+                        xAxis: {
+                            type: 'value', min: axis_x_min, max: axis_x_max
+                        },
+                        yAxis: {
+                            type: 'value', min: axis_y_min, max: axis_y_max
+                        },
+                        series: [
+                            {
+                                id: 'exData',
+                                name: '实验数据',
+                                type: 'scatter',
+                                smooth: true,
+                                symbolSize: 5,
+                                data: experiment_data_chartdata,
+                                markLine: markLineOpt
+                            }
+                        ]
+                    }
+                    chart4table.setOption(option)
+
+                    window.onresize = function () {
+                        chart4table.resize()
+                    }
+                }
+            }
+        }
+    }
+
+
+    var app = new Vue(page_1)
+
+    app.$mount("#solution_2")
+</script>
