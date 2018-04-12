@@ -17,6 +17,7 @@
 			<Item Name="QSM-PC (String).lvlib" Type="Library" URL="../QSM-PC (String)/Library/QSM-PC (String).lvlib"/>
 		</Item>
 		<Item Name="Sub VIs" Type="Folder">
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="Control" Type="Folder">
 				<Item Name="ChanConfig.ctl" Type="VI" URL="../Sub VIs/Control/ChanConfig.ctl"/>
 				<Item Name="ClockConfig.ctl" Type="VI" URL="../Sub VIs/Control/ClockConfig.ctl"/>
@@ -24,10 +25,14 @@
 				<Item Name="TaskConfig.ctl" Type="VI" URL="../Sub VIs/Control/TaskConfig.ctl"/>
 				<Item Name="TaskType.ctl" Type="VI" URL="../Sub VIs/Control/TaskType.ctl"/>
 			</Item>
+			<Item Name="Run VI.vi" Type="VI" URL="../Sub VIs/Run VI.vi"/>
+			<Item Name="Waveform.vi" Type="VI" URL="../Sub VIs/Waveform.vi"/>
 			<Item Name="creat Input Task.vi" Type="VI" URL="../Sub VIs/creat Input Task.vi"/>
 			<Item Name="creat Output Task.vi" Type="VI" URL="../Sub VIs/creat Output Task.vi"/>
 			<Item Name="Digital tube display.vi" Type="VI" URL="../Sub VIs/Digital tube display.vi"/>
+			<Item Name="Function Generator.vi" Type="VI" URL="../Sub VIs/Function Generator.vi"/>
 			<Item Name="Get configuration Address.vi" Type="VI" URL="../Sub VIs/Get configuration Address.vi"/>
+			<Item Name="Get Vi Reference.vi" Type="VI" URL="../Sub VIs/Get Vi Reference.vi"/>
 			<Item Name="Open PDF.vi" Type="VI" URL="../Sub VIs/Open PDF.vi"/>
 			<Item Name="Read Configuration-json.vi" Type="VI" URL="../Sub VIs/Read Configuration-json.vi"/>
 			<Item Name="Read Configuration.vi" Type="VI" URL="../Sub VIs/Read Configuration.vi"/>
@@ -35,6 +40,7 @@
 			<Item Name="Search DAQ.vi" Type="VI" URL="../Sub VIs/Search DAQ.vi"/>
 			<Item Name="TaskPool_get.vi" Type="VI" URL="../Sub VIs/TaskPool_get.vi"/>
 			<Item Name="Write Configuration.vi" Type="VI" URL="../Sub VIs/Write Configuration.vi"/>
+			<Item Name="Oscilloscope.vi" Type="VI" URL="../Sub VIs/Oscilloscope.vi"/>
 		</Item>
 		<Item Name="main.vi" Type="VI" URL="../main.vi"/>
 		<Item Name="wrapper.vi" Type="VI" URL="../wrapper.vi"/>
@@ -45,9 +51,13 @@
 				<Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
 				<Item Name="Close Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Close Registry Key.vi"/>
+				<Item Name="Convert 1DWfm to DDT.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/miscellaneous.llb/Convert 1DWfm to DDT.vi"/>
+				<Item Name="Convert DDT to 1DWfm.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/miscellaneous.llb/Convert DDT to 1DWfm.vi"/>
 				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
 				<Item Name="ctl_ProductCategory.ctl" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/ctl_ProductCategory.ctl"/>
 				<Item Name="ctl_ProductType.ctl" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/ctl_ProductType.ctl"/>
+				<Item Name="DAQmx Advance Trigger (Digital Edge).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Advance Trigger (Digital Edge).vi"/>
+				<Item Name="DAQmx Advance Trigger (None).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Advance Trigger (None).vi"/>
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
 				<Item Name="DAQmx Control Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Control Task.vi"/>
 				<Item Name="DAQmx Create AI Channel (sub).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create AI Channel (sub).vi"/>
@@ -184,9 +194,19 @@
 				<Item Name="DAQmx Read (Raw 1D U16).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D U16).vi"/>
 				<Item Name="DAQmx Read (Raw 1D U32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D U32).vi"/>
 				<Item Name="DAQmx Read.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read.vi"/>
+				<Item Name="DAQmx Reference Trigger (Analog Edge).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Reference Trigger (Analog Edge).vi"/>
+				<Item Name="DAQmx Reference Trigger (Analog Window).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Reference Trigger (Analog Window).vi"/>
+				<Item Name="DAQmx Reference Trigger (Digital Edge).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Reference Trigger (Digital Edge).vi"/>
+				<Item Name="DAQmx Reference Trigger (Digital Pattern).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Reference Trigger (Digital Pattern).vi"/>
+				<Item Name="DAQmx Reference Trigger (None).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Reference Trigger (None).vi"/>
 				<Item Name="DAQmx Rollback Channel If Error.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Rollback Channel If Error.vi"/>
 				<Item Name="DAQmx Set CJC Parameters (sub).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Set CJC Parameters (sub).vi"/>
 				<Item Name="DAQmx Start Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Start Task.vi"/>
+				<Item Name="DAQmx Start Trigger (Analog Edge).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Start Trigger (Analog Edge).vi"/>
+				<Item Name="DAQmx Start Trigger (Analog Window).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Start Trigger (Analog Window).vi"/>
+				<Item Name="DAQmx Start Trigger (Digital Edge).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Start Trigger (Digital Edge).vi"/>
+				<Item Name="DAQmx Start Trigger (Digital Pattern).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Start Trigger (Digital Pattern).vi"/>
+				<Item Name="DAQmx Start Trigger (None).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Start Trigger (None).vi"/>
 				<Item Name="DAQmx Stop Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Stop Task.vi"/>
 				<Item Name="DAQmx Timing (Burst Export Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Burst Export Clock).vi"/>
 				<Item Name="DAQmx Timing (Burst Import Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Burst Import Clock).vi"/>
@@ -197,6 +217,8 @@
 				<Item Name="DAQmx Timing (Sample Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Sample Clock).vi"/>
 				<Item Name="DAQmx Timing (Use Waveform).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Use Waveform).vi"/>
 				<Item Name="DAQmx Timing.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing.vi"/>
+				<Item Name="DAQmx Trigger.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/trigger.llb/DAQmx Trigger.vi"/>
+				<Item Name="DAQmx Wait Until Done.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Wait Until Done.vi"/>
 				<Item Name="DAQmx Write (Analog 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D DBL 1Chan NSamp).vi"/>
 				<Item Name="DAQmx Write (Analog 1D DBL NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D DBL NChan 1Samp).vi"/>
 				<Item Name="DAQmx Write (Analog 1D Wfm NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D Wfm NChan 1Samp).vi"/>
@@ -249,7 +271,10 @@
 				<Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
 				<Item Name="DTbl Digital Size.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Digital Size.vi"/>
 				<Item Name="DTbl Uncompress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Uncompress Digital.vi"/>
+				<Item Name="DWDT Index Channel by Name.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Index Channel by Name.vi"/>
+				<Item Name="DWDT Index Channel.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Index Channel.vi"/>
 				<Item Name="DWDT Uncompress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Uncompress Digital.vi"/>
+				<Item Name="Dynamic To Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Dynamic To Waveform Array.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
@@ -264,6 +289,7 @@
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
 				<Item Name="GXML.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI/GXML/GXML.lvlib"/>
+				<Item Name="Index Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Index Waveform Array.vi"/>
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
@@ -274,6 +300,7 @@
 				<Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
 				<Item Name="NI_MAPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MAPro.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
+				<Item Name="Number of Waveform Samples.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Number of Waveform Samples.vi"/>
 				<Item Name="Open Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Open Registry Key.vi"/>
 				<Item Name="Read Registry Value DWORD.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value DWORD.vi"/>
 				<Item Name="Read Registry Value Simple STR.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Read Registry Value Simple STR.vi"/>
@@ -293,7 +320,11 @@
 				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 				<Item Name="STR_ASCII-Unicode.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/STR_ASCII-Unicode.vi"/>
+				<Item Name="sub Dynamic To Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/miscellaneous.llb/sub Dynamic To Waveform Array.vi"/>
+				<Item Name="sub Waveform Array To Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/miscellaneous.llb/sub Waveform Array To Dynamic.vi"/>
 				<Item Name="subAutorangeInputLimits.vi" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/subAutorangeInputLimits.vi"/>
+				<Item Name="subChannel A source.ctl" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/subChannel A source.ctl"/>
+				<Item Name="subChannel B source.ctl" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/subChannel B source.ctl"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
 				<Item Name="subGetDeviceType.vi" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/subGetDeviceType.vi"/>
 				<Item Name="subGetDevProductType.vi" Type="VI" URL="/&lt;vilib&gt;/express/NI ELVISmx/misc.llb/subGetDevProductType.vi"/>
@@ -310,6 +341,23 @@
 				<Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
+				<Item Name="WDT Index Channel by Name CDB.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name CDB.vi"/>
+				<Item Name="WDT Index Channel by Name DBL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name DBL.vi"/>
+				<Item Name="WDT Index Channel by Name I16.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name I16.vi"/>
+				<Item Name="WDT Index Channel by Name I32.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name I32.vi"/>
+				<Item Name="WDT Index Channel by Name I64.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel by Name I64.vi"/>
+				<Item Name="WDT Index Channel CDB.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel CDB.vi"/>
+				<Item Name="WDT Index Channel DBL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel DBL.vi"/>
+				<Item Name="WDT Index Channel I16.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel I16.vi"/>
+				<Item Name="WDT Index Channel I32.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel I32.vi"/>
+				<Item Name="WDT Index Channel I64.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Index Channel I64.vi"/>
+				<Item Name="WDT Number of Waveform Samples CDB.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples CDB.vi"/>
+				<Item Name="WDT Number of Waveform Samples DBL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples DBL.vi"/>
+				<Item Name="WDT Number of Waveform Samples EXT.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples EXT.vi"/>
+				<Item Name="WDT Number of Waveform Samples I8.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples I8.vi"/>
+				<Item Name="WDT Number of Waveform Samples I16.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples I16.vi"/>
+				<Item Name="WDT Number of Waveform Samples I32.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples I32.vi"/>
+				<Item Name="WDT Number of Waveform Samples SGL.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/WDT Number of Waveform Samples SGL.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
@@ -344,7 +392,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{2F2564CE-1D5D-4943-A697-1FB55B45B694}</Property>
-				<Property Name="Bld_version.build" Type="Int">48</Property>
+				<Property Name="Bld_version.build" Type="Int">109</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">driver.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../hybrid-app-lv-vue-material/hybrid_app/pyinstaller/driver/driver.exe</Property>
@@ -353,45 +401,45 @@
 				<Property Name="Destination[1].destName" Type="Str">支持目录</Property>
 				<Property Name="Destination[1].path" Type="Path">../hybrid-app-lv-vue-material/hybrid_app/pyinstaller/driver/Data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[0]" Type="Str">{86F35563-31C9-4486-99C5-3E55E5976DCA}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[1]" Type="Str">{9813CF57-142C-464B-9395-F2638303709D}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[10]" Type="Str">{7666FA09-EA1B-4D55-9564-E81E962C6FF5}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[11]" Type="Str">{8596E69D-4088-4440-95B2-B83ED059D965}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[12]" Type="Str">{1DAB35D7-D13C-40BD-B67C-9F6161B24184}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[13]" Type="Str">{52652629-CD42-4F39-9388-0A1A33965328}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[14]" Type="Str">{0006F588-6576-4515-BD4A-20BE399417EE}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[15]" Type="Str">{05BFB553-4981-4221-9920-0903B1325EAF}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[16]" Type="Str">{469BB386-6798-4816-AFE7-69BE76E5AB58}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[2]" Type="Str">{D0A041EE-5BDF-4C94-89CC-C12575F7DD65}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[3]" Type="Str">{20898F14-06EB-4730-89E3-9AB703934D10}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[4]" Type="Str">{8A035BA2-40AF-4D22-A903-DE3EE56FD7B2}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[5]" Type="Str">{A384DD6D-5BA7-4CE7-BB09-656C1947053D}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[6]" Type="Str">{1E60DBF7-884F-4C05-B82B-2EC97DCE47FC}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[7]" Type="Str">{D8571C25-9DD9-4A79-9095-F13CFD1BCD3E}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[8]" Type="Str">{A4C7A134-5FD2-4FFC-AE27-5AD08509C43D}</Property>
-				<Property Name="Exe_actXinfo_enumCLSID[9]" Type="Str">{BC76F993-2A29-4DA1-9A79-7FDF9EF5F92B}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[0]" Type="Str">{FF22C175-95D0-4BE9-89FD-588C5B0BA6E2}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[1]" Type="Str">{3B53BA95-07E5-4D88-A41A-C28B65939BE5}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[10]" Type="Str">{4B2FA4C7-7436-4304-8C19-268D6618B9A8}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[11]" Type="Str">{8ECF60E4-B946-47C0-99C9-0D10461482E0}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[12]" Type="Str">{FB266F32-EEB2-48D5-88A2-2F310717E943}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[13]" Type="Str">{B7057533-AC2F-4CB7-AF57-88F914213D68}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[14]" Type="Str">{E2C7A12D-E66A-42F9-983D-10645B34C41C}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[15]" Type="Str">{8C6EA6B8-13CF-4653-B79E-BEC0A4C1A5C7}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[16]" Type="Str">{804175D1-97E2-4DF5-AE44-FE418DA713B5}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[2]" Type="Str">{879529C1-14CE-4714-8F22-C33E36BCFC8F}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[3]" Type="Str">{93387199-D39B-4453-9AFA-714C08B2BD15}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[4]" Type="Str">{26E6A6A5-7028-433D-B5A0-6EFFECA27545}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[5]" Type="Str">{B9C1C4CB-422C-4F46-9BCD-F4F392C71DB5}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[6]" Type="Str">{598CDA9A-DB11-487C-9080-E30A80E29B80}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[7]" Type="Str">{F03C5458-94FB-4F16-81E1-79F5A934C4DB}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[8]" Type="Str">{9AC7217D-EBDF-44D1-BD34-9AF761BD7A7D}</Property>
+				<Property Name="Exe_actXinfo_enumCLSID[9]" Type="Str">{E11505C9-B876-4AC3-A39A-0FDF33D95977}</Property>
 				<Property Name="Exe_actXinfo_enumCLSIDsCount" Type="Int">17</Property>
 				<Property Name="Exe_actXinfo_majorVersion" Type="Int">5</Property>
 				<Property Name="Exe_actXinfo_minorVersion" Type="Int">5</Property>
-				<Property Name="Exe_actXinfo_objCLSID[0]" Type="Str">{4D461497-A0CB-4F2C-BEBA-83D5C2715E93}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[1]" Type="Str">{1A37E2F3-E4BC-4874-9CCB-DBFCBFF27C60}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[10]" Type="Str">{8D759CF3-B00C-44B4-8733-19049E688354}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[11]" Type="Str">{81996FE1-058B-4F94-BD75-9660339C7FCA}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[12]" Type="Str">{2537F5C1-3BE5-4C73-BD55-F0D02A952D65}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[13]" Type="Str">{F4A99892-5CE7-4D02-9AB2-B2A5CD382B4D}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[2]" Type="Str">{388324FC-C965-4648-8D34-9221638A3996}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[3]" Type="Str">{24B81F64-3411-4640-91E4-ACE5C5EEFA03}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[4]" Type="Str">{AE2ADE6F-6E7E-4FAA-BBE6-917EE6231D87}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[5]" Type="Str">{43FFBDB1-1A7C-47BC-8C62-98E0A33FDA47}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[6]" Type="Str">{0790BB48-950C-4D9E-BF95-2C93338EBF47}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[7]" Type="Str">{388AA593-0E4A-4A57-B604-01D7829FA0DF}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[8]" Type="Str">{62351410-32F0-4D69-8F8E-B296DA547847}</Property>
-				<Property Name="Exe_actXinfo_objCLSID[9]" Type="Str">{DE82E679-F89C-4EAD-B1F5-BE4E9A2A5349}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[0]" Type="Str">{AB685238-FBA0-4F41-B2A6-DEFB85C50BF0}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[1]" Type="Str">{DD6E3395-2BA3-42F4-9838-C86790DF9807}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[10]" Type="Str">{D0B57D88-999F-4489-8DAA-447095B5B15F}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[11]" Type="Str">{5DAF88D5-8CCB-4A96-AEDD-BE6D47A65285}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[12]" Type="Str">{778CE4B3-B3A3-4E97-9AE6-7D006386B8EC}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[13]" Type="Str">{B0304F28-7066-4083-8320-C06EB0E0EE94}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[2]" Type="Str">{0B7FB05F-3D37-43E4-B3B6-E311A6047136}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[3]" Type="Str">{AB13675A-C1F1-4BEB-A264-655F5859E0BA}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[4]" Type="Str">{EF21C66A-B6EC-4B41-94DC-6B4B4AC369AB}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[5]" Type="Str">{CBA32FDE-00AF-46C8-B3D7-513826290722}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[6]" Type="Str">{F67C7306-6125-44DA-8607-75F4823E1B9D}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[7]" Type="Str">{3647112B-C568-4DDB-A8E0-F033FF942975}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[8]" Type="Str">{D1BDCDEB-6D9D-4B41-B006-F02CE8892487}</Property>
+				<Property Name="Exe_actXinfo_objCLSID[9]" Type="Str">{E7DFBE8F-E2BE-4E8B-9638-70C75FFDC8AB}</Property>
 				<Property Name="Exe_actXinfo_objCLSIDsCount" Type="Int">14</Property>
 				<Property Name="Exe_actXinfo_progIDPrefix" Type="Str">Driver</Property>
 				<Property Name="Exe_actXServerName" Type="Str">Driver</Property>
 				<Property Name="Exe_actXServerNameGUID" Type="Str"></Property>
-				<Property Name="Source[0].itemID" Type="Str">{66CBFCBC-85C8-40E5-BCB1-03942AF24336}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{53B9A510-2694-4D0E-8989-522D64839776}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/我的电脑/wrapper.vi</Property>
