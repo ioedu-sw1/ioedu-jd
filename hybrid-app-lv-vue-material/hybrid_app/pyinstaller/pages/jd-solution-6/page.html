@@ -1,0 +1,106 @@
+<div id='solution_6'>
+    <div>
+        <span class="md-title">移相器、相敏检波器实验</span>
+        <md-tabs md-alignment="centered">
+            <md-tab id="tab-yx" md-label="移相器实验">
+                <md-steppers :md-active-step.sync="active_yx" md-vertical md-linear @md-changed="onActiveStepperChanged_yx">
+                    <md-step id="yx_step1" md-label="接线" md-description="" :md-done.sync="yx_step1">
+                        <p>
+                            按“移相器实验接线图”示意接线。此时AO0的输出为ｆ=1kHz的正弦波，Vp-p=5V（峰峰值）。
+                        </p>
+                        <md-card class='card-in-step'>
+                            <md-card-header>
+                                <div class="md-subhead">移相器实验接线图</div>
+                            </md-card-header>
+                            <md-card-content>
+                                <div>
+                                    <img src="./pages/jd-solution-6/images/step1-1.png" alt="移相器实验接线图" />
+                                </div>
+                            </md-card-content>
+                        </md-card>
+                        <br/>
+                        <md-button class="md-raised md-primary" @click="setDone_yx('yx_step1', 'yx_step2')">继续</md-button>
+                    </md-step>
+                    <md-step id="yx_step2" md-label="调节移相电位器" md-description="" :md-done.sync="yx_step2">
+                        <p>调节移相器模板上的移相电位器（旋钮），观察波形的相角变化（逆时针到底0kΩ～顺时针到底10kΩ变化范围）。</p>
+                        <div id="chart_yx_step2" style="width:65%;height:400px"></div>
+                        <br/>
+                        <md-button class="md-raised md-primary" @click="setDone_yx('yx_step2', 'yx_finalstep')">继续</md-button>
+                    </md-step>
+                    <md-step id="yx_finalstep" md-label="改变输入信号频率" md-description="" :md-done.sync="yx_finalstep">
+                        <p>改变输入信号频率为ｆ=5kHz，再次测试相应的ΦＦ和△ΦＦ。测试完毕关闭主电源。</p>
+                        <div id="chart_yx_step3" style="width:65%;height:400px"></div>
+                        <br/>
+                        <md-button class="md-raised md-primary" @click="setDone_yx('yx_finalstep')">完成</md-button>
+                    </md-step>
+                </md-steppers>
+            </md-tab>
+            <md-tab id="tab-xmjb" md-label="相敏检波器实验">
+                <md-steppers :md-active-step.sync="active" md-vertical md-linear @md-changed="onActiveStepperChanged_xmjb">
+
+                </md-steppers>
+            </md-tab>
+        </md-tabs>
+    </div>
+</div>
+<script>
+    Vue.use(VueMaterial.default)
+    var page_6 = {
+        name: "page_6",
+        data: function data() {
+            return {
+                active_yx: "yx_step1",
+                exId: "jd-solution-6",
+                secondStepError: null
+            }
+        },
+        mounted: function () {
+            var self = this
+            pyapi.api_driver_init(self.exId)
+        },
+        methods: {
+            setDone_yx: function setDone_yx(currentId, nextId) {
+                var self = this
+                self[currentId] = true
+                if (nextId) {
+                    self.active_yx = nextId
+                }
+            },
+            onActiveStepperChanged_yx: function onActiveStepperChanged_yx(activeStep) {
+                var self = this
+                switch (activeStep) {
+                    case 'yx_step1':
+                        //Stop_Oscilloscope
+                        pyapi.api_driver_stop_oscilloscope()
+                        //Stop_Function
+                        pyapi.api_driver_stop_functiongen()
+                        break
+                    case 'yx_step2':
+                        //Stop_Oscilloscope
+                        pyapi.api_driver_stop_oscilloscope()
+                        //Stop_Function
+                        pyapi.api_driver_stop_functiongen()
+                        //Start_Function
+                        pyapi.api_driver_start_functiongen(JSON.stringify([{ "signaltype": "Sine", "frequency": 1000, "amplitude": 2.5, "phase": 0 }, { "signaltype": "Sine", "frequency": 1000, "amplitude": 2.5, "phase": 180 }]))
+                        //Start_Oscilloscope
+                        pyapi.api_driver_start_oscilloscope(0.01)
+                        break
+                    case 'yx_finalstep':
+                        //Stop_Oscilloscope
+                        pyapi.api_driver_stop_oscilloscope()
+                        //Stop_Function
+                        pyapi.api_driver_stop_functiongen()
+                        //Start_Function
+                        pyapi.api_driver_start_functiongen(JSON.stringify([{ "signaltype": "Sine", "frequency": 5000, "amplitude": 2.5, "phase": 0 }, { "signaltype": "Sine", "frequency": 5000, "amplitude": 2.5, "phase": 180 }]))
+                        //Start_Oscilloscope
+                        pyapi.api_driver_start_oscilloscope(0.01)
+                        break
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+    var app = new Vue(page_6)
+    app.$mount("#solution_6")
+</script>

@@ -1,4 +1,4 @@
-#coding:utf-8
+# coding:utf-8
 # Tutorial example. Doesn't depend on any third party GUI framework.
 # Tested with CEF Python v56.2+
 
@@ -140,6 +140,11 @@ class PyAPI(object):
             result = {}
             result['DCVoltage'] = resultObj['payload']['callback_msg']
             self.js_callback_Read_DCVoltage.Call(result)
+        elif subject == 'Oscilloscope':
+            result = {}
+            result['Oscilloscope'] = resultObj['payload']['callback_msg']
+            print(result['Oscilloscope'])
+            pass
         else:
             pass
         # restart timer
@@ -277,6 +282,15 @@ class PyAPI(object):
         p.stdin.flush()
 
     def api_driver_init(self, exId):
+        # ----------- stop all timing loop -----------
+        # stop read R
+        self.api_driver_stop_Read_R()
+        # stop read DCVoltage
+        self.api_driver_stop_Read_DCVoltage()
+        # stop read Oscilloscope
+        # stop FunctionGenerator
+
+        # ----------- send init msg -----------
         msg = {}
         msg['app'] = DRIVER_NAME
         msg['command'] = 'Init'
@@ -305,7 +319,8 @@ class PyAPI(object):
         self.Read_R_Timer.start()
 
     def api_driver_stop_Read_R(self):
-        self.Read_R_Timer.cancel()
+        if self.Read_R_Timer:
+            self.Read_R_Timer.cancel()
 
     def api_driver_start_Read_DCVoltage(self, js_callback):
         print('start_Read_DCVoltage')
@@ -315,7 +330,48 @@ class PyAPI(object):
         self.Read_DCVoltage_Timer.start()
 
     def api_driver_stop_Read_DCVoltage(self):
-        self.Read_DCVoltage_Timer.cancel()
+        if self.Read_DCVoltage_Timer:
+            self.Read_DCVoltage_Timer.cancel()
+
+    def api_driver_start_oscilloscope(self, percent):
+        msg = {}
+        msg['app'] = DRIVER_NAME
+        msg['command'] = 'Start_Oscilloscope'
+        msg['payload'] = percent
+        jsonStr_msg = json.dumps(msg)
+        jsonStr_msg += '\n'
+        p.stdin.write(jsonStr_msg.encode('utf-8'))
+        p.stdin.flush()
+
+    def api_driver_stop_oscilloscope(self):
+        msg = {}
+        msg['app'] = DRIVER_NAME
+        msg['command'] = 'Stop_Oscilloscope'
+        msg['payload'] = {}
+        jsonStr_msg = json.dumps(msg)
+        jsonStr_msg += '\n'
+        p.stdin.write(jsonStr_msg.encode('utf-8'))
+        p.stdin.flush()
+
+    def api_driver_start_functiongen(self, para):
+        msg = {}
+        msg['app'] = DRIVER_NAME
+        msg['command'] = 'Start_Function'
+        msg['payload'] = para
+        jsonStr_msg = json.dumps(msg)
+        jsonStr_msg += '\n'
+        p.stdin.write(jsonStr_msg.encode('utf-8'))
+        p.stdin.flush()
+
+    def api_driver_stop_functiongen(self):
+        msg = {}
+        msg['app'] = DRIVER_NAME
+        msg['command'] = 'Stop_Function'
+        msg['payload'] = {}
+        jsonStr_msg = json.dumps(msg)
+        jsonStr_msg += '\n'
+        p.stdin.write(jsonStr_msg.encode('utf-8'))
+        p.stdin.flush()
 
 
 if __name__ == '__main__':

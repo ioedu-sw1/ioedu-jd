@@ -1,6 +1,7 @@
 <div id='solution_1'>
     <div>
-        <md-steppers :md-active-step.sync="active" md-vertical md-linear>
+        <span class="md-title">应变片单臂电桥性能实验</span>
+        <md-steppers :md-active-step.sync="active" md-vertical md-linear @md-changed="onActiveStepperChanged">
             <md-step id="step1" md-label="安装" md-description="" :md-done.sync="step1">
                 <p>1、 将托盘安装到传感器上，如“传感器托盘安装示意图”所示。确保电源关闭，否则关闭之
                     <strong>(myDAQ：关闭IOEDU-myDAQ-Board左上角电压开关；ELVIS：关闭ELVIS自身的右上角电压开关)</strong>
@@ -315,77 +316,8 @@
             setDone: function setDone(currentId, nextId) {
                 var self = this
                 self[currentId] = true
-                if (currentId) {
-                    switch (currentId) {
-                        case "step1":
-                            break
-                        case "step2":
-                            // Stop_Read_R
-                            pyapi.api_driver_stop_Read_R()
-                            break
-                        case "step3":
-                            // Stop_Read_DCVoltage
-                            pyapi.api_driver_stop_Read_DCVoltage()
-                            break
-                        case "step4":
-                            // Stop_Read_DCVoltage
-                            pyapi.api_driver_stop_Read_DCVoltage()
-                            break
-                        case "step5":
-                            // Stop_Read_DCVoltage
-                            pyapi.api_driver_stop_Read_DCVoltage()
-                            break
-                        case "finalstep":
-                            break
-                        default:
-                            break
-                    }
-                }
                 if (nextId) {
                     self.active = nextId
-                    switch (nextId) {
-                        case "step1":
-                            break
-                        case "step2":
-                            // Start_Read_R
-                            pyapi.api_driver_start_Read_R(js_callback_api_driver_start_Read_R)
-                            break
-                        case "step3":
-                            // Start_Read_DCVoltage
-                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
-                            break
-                        case "step4":
-                            // Start_Read_DCVoltage
-                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
-                            break
-                        case "step5":
-                            // Start_Read_DCVoltage
-                            pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
-                            break
-                        case "finalstep":
-                            break
-                        default:
-                            break
-                    }
-                }
-                function js_callback_api_driver_start_Read_R(result) {
-                    var R_value = result['R']
-                    console.log(R_value)
-                    if (R_value) {
-                        if (R_value != 'NaN') {
-                            R_value = Number(R_value).toFixed(1)
-                        }
-                        self.R = R_value
-                    }
-                }
-                function js_callback_api_driver_start_Read_DCVoltage(result) {
-                    var DCVoltage_value = result['DCVoltage']
-                    if (DCVoltage_value) {
-                        if (DCVoltage_value != 'NaN') {
-                            DCVoltage_value = Number(DCVoltage_value).toFixed(4)
-                        }
-                        self.DCVoltage = DCVoltage_value
-                    }
                 }
             },
             calculateResultTable: function calculateResultTable() {
@@ -519,6 +451,76 @@
 
                     window.onresize = function () {
                         chart4table.resize()
+                    }
+                }
+            },
+            onActiveStepperChanged: function onActiveStepperChanged(activeStep) {
+                var self = this
+                switch (activeStep) {
+                    case "step1":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        break
+                    case "step2":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        // Start_Read_R
+                        pyapi.api_driver_start_Read_R(js_callback_api_driver_start_Read_R)
+                        break
+                    case "step3":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        // Start_Read_DCVoltage
+                        pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                        break
+                    case "step4":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        // Start_Read_DCVoltage
+                        pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                        break
+                    case "step5":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        // Start_Read_DCVoltage
+                        pyapi.api_driver_start_Read_DCVoltage(js_callback_api_driver_start_Read_DCVoltage)
+                        break
+                    case "finalstep":
+                        // Stop_Read_R
+                        pyapi.api_driver_stop_Read_R()
+                        // Stop_Read_DCVoltage
+                        pyapi.api_driver_stop_Read_DCVoltage()
+                        break
+                    default:
+                        break
+                }
+                function js_callback_api_driver_start_Read_R(result) {
+                    var R_value = result['R']
+                    console.log(R_value)
+                    if (R_value) {
+                        if (R_value != 'NaN') {
+                            R_value = Number(R_value).toFixed(1)
+                        }
+                        self.R = R_value
+                    }
+                }
+                function js_callback_api_driver_start_Read_DCVoltage(result) {
+                    var DCVoltage_value = result['DCVoltage']
+                    if (DCVoltage_value) {
+                        if (DCVoltage_value != 'NaN') {
+                            DCVoltage_value = Number(DCVoltage_value).toFixed(4)
+                        }
+                        self.DCVoltage = DCVoltage_value
                     }
                 }
             }
